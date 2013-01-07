@@ -1,0 +1,78 @@
+body{
+
+	background:url("Login_new/images/bg.png") repeat-x;
+	background-color: #0080b1;
+	-webkit-font-smoothing:antialiased;
+	font-family:"proxima-nova-1","proxima-nova-2",sans-serif;
+}
+	
+
+
+table{
+margin-left: auto;
+margin-right: auto;
+}
+
+td{
+	vertical-align: middle;
+}
+
+
+input{
+	width: 393px;
+	height: 59px;
+	text-indent: 15px;
+	border-width: 0px;
+	outline: none;
+	background:url("Login_new/images/login_new_09.png") no-repeat center; 
+}
+
+.login{
+	background: url("Login_new/images/login_new_20.png") repeat-y;
+	
+}
+
+#top{
+	height: 76px;
+	background: url("Login_new/images/login_new_05.png") no-repeat;
+}
+
+#input_text{
+	width: 500px;
+	height: 61px;
+	padding-right: 5em;
+	padding-left: 2.5em;
+	text-align: right;
+
+
+}
+
+#button{
+	height: 70px;
+	padding-right: 4.6em;
+	
+}
+
+#login_button{
+	height: 70px;
+	width: 132px;
+	background: url("Login_new/images/login_new_23.png") no-repeat center;
+	border-width: 0px;
+	cursor:pointer;
+}
+
+#login_button:hover{
+	
+	background: url("Login_new/images/login_new_hover_23.png") no-repeat center;
+}
+
+#bottom{
+	height: 42px;
+	background: url("Login_new/images/login_new_26.png") no-repeat;
+}
+
+#login_failed{
+	padding-right: 5em;
+	padding-left: 3em;
+}
+

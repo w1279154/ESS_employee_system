@@ -1,0 +1,67 @@
+body{
+
+background-color:#c1cfd2;
+	
+}
+
+table{
+margin-left: auto;
+margin-right: auto;
+}
+
+
+input{
+	width: 329px;
+	height: 37px;
+	text-indent: 15px;
+	border-width: 0px;
+	outline: none;
+	background:url("Login/images/login_08.png") no-repeat center; 
+}
+
+.login{
+	background: url("Login/images/login_05.png") repeat-y;
+	
+}
+
+#top{
+	height: 49px;
+	background: url("Login/images/login_03.png") no-repeat;
+}
+
+#input_text{
+	width: 329px;
+	height: 50px;
+	padding-right: 2.5em;
+	padding-left: 2.5em;
+}
+
+#button{
+	height: 50px;
+	padding-right: 2.5em;
+	
+}
+
+#login_button{
+	height: 37px;
+	width: 102px;
+	background: url("Login/images/login_14.png") no-repeat center;
+	border-width: 0px;
+	cursor:pointer;
+}
+
+#login_button:hover{
+	
+	background: url("Login/images/alogin_14.png") no-repeat center;
+}
+
+#bottom{
+	height: 64px;
+	background: url("Login/images/login_17.png") no-repeat;
+}
+
+#login_failed{
+	padding-right: 3em;
+	padding-left: 3em;
+}
+

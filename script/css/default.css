@@ -1,0 +1,94 @@
+body{
+	text-align: center;
+	background-color: #fafafa;
+	-webkit-font-smoothing:antialiased;
+	font-family:"proxima-nova-1","proxima-nova-2",sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,h2.big{color:#1c1c1c}
+h1,h2.big{font-size:64px;font-weight:200;letter-spacing:-3px;line-height:80px;margin-bottom:0;}
+h1 > strong,h2.big > strong{font-weight:600}
+h2{font-size:24px;font-weight:200;margin-bottom:12px;}
+h2 > strong,h2.strong{font-weight:600}
+h2.mid{font-size:44px;font-weight:100;letter-spacing:-1px;margin-bottom:32px}
+h3{font-size:20px;font-weight:700;letter-spacing:-1px}
+h4,h5,h6{margin:0 0 8px 0;font-size:16px}
+
+.results td:first-child { text-align: right; }
+  
+
+  #header {
+   /* box-shadow: 0px 0px 10px  #CCC; */
+    background-color: #66a4c8;
+    height: 60px;
+  }
+/*#34c6f8; --->> light blue */
+  #header_title {
+  	font-size:40px;
+  	letter-spacing:-3px;
+  	margin-bottom:0;
+  	color: #eef3fa;
+    height: 50px;
+    vertical-align: middle;
+    
+  }
+
+#nav{
+  background-color: #f1f1f1;
+  height: 20px;
+}
+
+#menu{
+	
+  vertical-align: middle;
+  width: 100%;
+  height: 10px;
+  margin-top: 5px;
+}  
+
+.button_menu {
+    background:#DDD;
+    border:solid 1px #ddd;
+    border-radius:0px;
+    box-shadow: 0px 10px -10px #CCC;
+    padding:5px;
+
+    text-decoration: none;
+      background:-webkit-gradient(linear,left top,left bottom,from(#f4f4f4),to(#eaeaea));
+    background:-moz-linear-gradient(top,#f4f4f4,#eaeaea);
+    background:linear-gradient(top,#f4f4f4,#eaeaea);
+
+  }
+  
+  .button_menu:Hover {
+    box-shadow: 0px 0px 3px #CCC;
+    cursor:pointer;
+    border:solid 1px #ddd;
+   
+ 
+background:-webkit-gradient(linear,left top,left bottom,from(#f4f4f4),to(#eaeaea));
+    background:-moz-linear-gradient(top,#f4f4f4,#fafafa);
+    background:linear-gradient(top,#f4f4f4,#fafafa);
+  }
+
+
+  .button_logout{
+    
+    border-radius:0px;
+    margin-bottom: 10px ;
+    padding:0px;
+    color:maroon;
+    background: white;
+  }
+
+  .button_logout:Hover {
+    
+    cursor:pointer;
+    border:solid 1px #fff;
+    background:maroon;
+    color: white;
+   
+   
+  }
+
+  .button_menu:link, .button_menu:visited, .button_menu:hover, .button_menu:active { color: #000; }
