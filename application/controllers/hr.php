@@ -41,7 +41,7 @@ class Hr extends CI_Controller {
 
     	if ($session['logged_in'] != '1')
 			{
-				redirect('authentication/index');
+				redirect("https://{$_SERVER['HTTP_HOST']}/w1279154/index.php/authentication");
 			}
 			else {
 				echo('<div align="right">Logged in as '.$session['username'].', <a class="button_logout" id="auth" onClick="logout()">Logout</a></div>');
@@ -476,10 +476,18 @@ class Hr extends CI_Controller {
 		//FIND ONE THAT IS THE LATEST 9999-00-11 -> UPDATE THIS TO NOW() DATE -> ADD NEW SALARY WITH 9999-00-99 TO DATE
 		$data['emp_no'] = $this->input->post('emp_no');
 		$this->set($data['emp_no']);
+		$now = $this->date_now();
 
 		$result = $this->hr_model->change_salary_search($data);
+		//echo ($result['rows'][0]->from_date);
 
-		if ($result['num_rows'] != 1)
+		if ($result['rows'][0]->from_date == $now)
+		{
+				$data['search'] = 2;
+				$this->load->view('default_head');
+				$this->load->view('change_salary_search', $data);
+		}
+		else if ($result['num_rows'] != 1)
 			{
 				$data['search'] = 0;
 				$this->load->view('default_head');
@@ -540,11 +548,13 @@ class Hr extends CI_Controller {
 		//CHECK IF THIS INCLUDES SALARY INCREASE
 		$data['emp_no'] = $this->input->post('emp_no');
 		$this->set($data['emp_no']);
+		$data['now'] = $this->date_now();
 
 		$result = $this->hr_model->change_title_search($data);
 		$manager = $this->hr_model->if_manager($data);
 
-
+		$validate = $this->hr_model->change_title_validation($data);
+		
 		$data['options_title'] = $this->hr_model->title_options();
 
 		if ($result['num_rows'] != 1)
@@ -565,8 +575,18 @@ class Hr extends CI_Controller {
 			else if ($manager == false)
 			{
 				$employee = $result['rows'];
-				$data['options_title'] = array_diff($data['options_title'], array($employee[0]->title));
-
+					
+				$data['options_title'] = array_diff($data['options_title'], array($employee[0]->title, 'Manager'));
+				
+			if ($validate['num_rows'] > 0)
+			{
+					
+					foreach ($validate['rows'] as $emp_title)
+					{
+					$data['options_title'] = array_diff($data['options_title'], array($emp_title->title));	
+					}	
+			}
+				
 				$data['employee'] = $result['rows'];
 
 				$this->load->view('default_head');

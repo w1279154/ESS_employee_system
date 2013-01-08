@@ -548,7 +548,7 @@ class Hr_model extends CI_Model {
 	{
 		$emp_no = $data['emp_no'];
 
-		$q = $this->db->select('e.emp_no, e.first_name, e.last_name, e.gender, e.birth_date, s.salary')
+		$q = $this->db->select('e.emp_no, e.first_name, e.last_name, e.gender, e.birth_date, s.salary, s.from_date')
 	   		->from('employees AS e')
 	   		->join('salaries AS s', 'e.emp_no = s.emp_no')
 			->where('s.to_date', '9999-01-01')
@@ -601,6 +601,29 @@ class Hr_model extends CI_Model {
 	   		->from('employees AS e')
 	   		->join('titles AS t', 'e.emp_no = t.emp_no')
 			->where('t.to_date', '9999-01-01')
+			->where('e.emp_no', $emp_no);
+
+			$ret['rows'] = $q->get()->result();	
+	 		$ret['num_rows'] = count($ret['rows']);
+	 		
+	 	  	return $ret;
+
+	}//END CHANGE_TITLE_SEARCH
+
+	/**************************************************************************************************************************************
+	*	CHANGE TITLE VALIDATION
+	***************************************************************************************************************************************/
+
+	public function change_title_validation($data)
+	{
+
+		$emp_no = $data['emp_no'];
+		$now = $data['now'];
+
+		$q = $this->db->select('t.title')
+	   		->from('employees AS e')
+	   		->join('titles AS t', 'e.emp_no = t.emp_no')
+			->where('t.from_date', $now)
 			->where('e.emp_no', $emp_no);
 
 			$ret['rows'] = $q->get()->result();	

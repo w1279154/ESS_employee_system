@@ -64,8 +64,11 @@
 	<tr>
 		<td class="login" align="right"><span id="login_failed" style="color: RED;"></span></td>
 	</tr>
+	<tr class="login" align="right" ><td style="padding-right: 5em; padding-left: 3em;">
+		 Back to <a href='<?= "http://".$_SERVER['HTTP_HOST']."/w1279154/" ?>'>Search </a>
+	</td></tr>
 	<tr><td id="bottom" >
-		
+		 
 	</td></tr>
 </table>
     </form>

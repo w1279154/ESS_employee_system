@@ -8,14 +8,18 @@
 	<link rel='stylesheet' href='/w1279154/script/js/popbox/popbox.css' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/w1279154/script/css/msgbox/jquery.msgbox.css" />
   <script src="/w1279154/script/js/jquery-1.8.3.js"></script>
+  <script src="/w1279154/script/js/validation.js"></script>
   <script type='text/javascript' charset='utf-8' src='/w1279154/script/js/popbox/jquery.js'></script>
   <script src="/w1279154/script/js/jquery-ui-1.9.2.custom.js"></script>
   <script type="text/javascript" src="/w1279154/script/css/msgbox/jquery.msgbox.min.js"></script>
 	<script type='text/javascript' charset='utf-8' src='/w1279154/script/js/popbox/popbox.js'></script>
   
   <script>
+
+  
   function logout(){
-  var url = '<?= base_url()."index.php/authentication/logout"?>';
+     //'<?= base_url()."index.php/authentication/logout"?>';
+  var url = '<?= "https://".$_SERVER['HTTP_HOST']."/w1279154/index.php/authentication/logout"?>';
   window.location.replace(url);
   }
   </script>

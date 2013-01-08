@@ -23,7 +23,7 @@ class Authentication extends CI_Controller {
 	public function logout()
 	{
 		$this->user_model->delete_session();
-		redirect('find_employee', 'location');
+		redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/");
 	}
 
 	public function auth()
@@ -40,7 +40,7 @@ class Authentication extends CI_Controller {
 		//$this->load->view('login');
 		if ($result['check'] == true)
 		{
-			redirect('/hr/index');		
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr/index");		
 		} //END IF
 		else if($result['check'] == false) {
 			$data['login'] = 1;
@@ -59,7 +59,7 @@ class Authentication extends CI_Controller {
 
 		if ($result['check'] == true)
 		{
-			redirect('hr/remove_employee_complete');
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr/remove_employee_complete");
 		} //END IF
 		else if($result['check'] == false) {
 			$this->load->view('auth_failed');
@@ -80,7 +80,7 @@ class Authentication extends CI_Controller {
 
 		if ($result['check'] == true)
 		{
-			redirect('hr/move_employee_complete');
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr/move_employee_complete");
 		} //END IF
 		else if($result['check'] == false) {
 			$this->load->view('auth_failed');
@@ -101,7 +101,7 @@ class Authentication extends CI_Controller {
 
 		if ($result['check'] == true)
 		{
-			redirect('hr/promote_employee_complete');
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr/promote_employee_complete");
 		} //END IF
 		else if($result['check'] == false) {
 			$this->load->view('auth_failed');
@@ -126,7 +126,7 @@ class Authentication extends CI_Controller {
 
 		if ($result['check'] == true)
 		{
-			redirect('hr/demote_employee_complete');
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr/demote_employee_complete");
 		} //END IF
 		else if($result['check'] == false) {
 			$this->load->view('auth_failed');
@@ -150,7 +150,7 @@ class Authentication extends CI_Controller {
 
 		if ($result['check'] == true)
 		{
-			redirect('hr/change_salary_complete');
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr/change_salary_complete");
 		} //END IF
 		else if($result['check'] == false) {
 			$this->load->view('auth_failed');
@@ -174,7 +174,7 @@ class Authentication extends CI_Controller {
 
 		if ($result['check'] == true)
 		{
-			redirect('hr/change_title_complete');
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr/change_title_complete");
 		} //END IF
 		else if($result['check'] == false) {
 			$this->load->view('auth_failed');

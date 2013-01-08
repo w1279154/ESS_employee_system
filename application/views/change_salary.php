@@ -67,7 +67,7 @@
 
 <br/>
 	
-	<div id="new_title_choice">
+	<div id="new_salary_choice">
 		<table align="center">
 			<tr>
 				<td>
@@ -104,7 +104,7 @@
       </p>
 
 
-      	<form id="login_form" action="<?= base_url()."index.php/authentication/auth_change_salary"?>" method="post">
+      	<form id="login_form" action='<?= "https://".$_SERVER['HTTP_HOST']."/w1279154/index.php/authentication/auth_change_salary"?>' method="post">
 <table cellpadding="0" border="0" cellspacing="0" id="login_table" align="center">
 	</tr>
 	<!--USERNAME INPUT FIELD-->

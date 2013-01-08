@@ -4,9 +4,8 @@
 <?php foreach($employee as $emp){ ?>
 
 <h2>Change <strong><?= $emp->first_name; ?> <?= $emp->last_name; ?>'s</strong>
-	<br/> Salary?</h2>
-	<script> var current_salary = "<?= $emp->salary; ?>";
-	</script>
+	<br/> Job Title?</h2>
+	
 
 	<div id="emp_details" align="center">
 		
@@ -79,6 +78,11 @@
 		     	</td>
 			</tr>
 		</table>
+		<p style="font-size:12; color:black;">
+      	<strong>NOTE:</strong>
+      	IF YOU HAVE CHANGED A TITLE TODAY, YOU WILL NOT BE ABLE TO<br/> 
+      	REPICK THIS TITLE UNTIL A FUTURE DATE.
+      	</p>
 	</div>
 
 <br/>
@@ -105,7 +109,7 @@
       </p>
 
 
-      	<form id="login_form" action="<?= base_url()."index.php/authentication/auth_change_title"?>" method="post">
+      	<form id="login_form" action='<?= "https://".$_SERVER['HTTP_HOST']."/w1279154/index.php/authentication/auth_change_title"?>' method="post">
 <table cellpadding="0" border="0" cellspacing="0" id="login_table" align="center">
 	</tr>
 	<!--USERNAME INPUT FIELD-->

@@ -14,7 +14,8 @@
 | path to your installation.
 |
 */
-$config['base_url']	= "https://{$_SERVER['HTTP_HOST']}/w1279154";
+//$config['base_url']	= "https://{$_SERVER['HTTP_HOST']}/w1279154";
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------

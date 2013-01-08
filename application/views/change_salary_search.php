@@ -10,7 +10,7 @@
 					Employee Number:
 				</td>
 				<td>
-					<input type="text" name="emp_no" placeholder="Enter Here" required></input>
+					<input type="text" name="emp_no" placeholder="Enter Here" class="validate_num" required></input>
 				</td>
 			</tr>
 			<tr>
@@ -28,7 +28,11 @@
 			var search = <?= $search ?>;
 			//alert(login);
 			
-			if (search != 1)
+			if (search == 2)
+			{
+				document.getElementById('search_failed').innerHTML = "This employee has already changed their salary today.";			
+			} //END IF
+			else if (search != 1)
 			{
 				document.getElementById('search_failed').innerHTML = "Search Failed. Employee Number Incorrect.";			
 			} //END IF

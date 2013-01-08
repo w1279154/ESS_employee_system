@@ -15,15 +15,15 @@ class Find_employee extends CI_Controller {
 	  /**************************************************************************************************************************************
 	*	LOGIN CHECK
 	***************************************************************************************************************************************/
-
+//"https://{$_SERVER['HTTP_HOST']}/w1279154/index.php/authentication"
     public function login_check(){
     	
     	//print_r ($this->session->userdata('login'));
 		$session = $this->session->userdata('login');
 
-    	if ($session == null)
+    	if ($session == null || !$session)
 			{
-				echo("<div align='right'>No User Logged in, <a href='".base_url()."index.php/authentication' class='button_logout' id='auth'>Login</a></div>");
+				echo("<div align='right'>No User Logged in, <a href='https://".$_SERVER['HTTP_HOST']."/w1279154/index.php/authentication' class='button_logout' id='auth'>Login</a></div>");
 				
 			}
 			else if ($session['logged_in'] == '1') {
