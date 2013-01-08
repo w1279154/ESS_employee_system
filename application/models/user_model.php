@@ -31,7 +31,7 @@ public function user_auth($data){
 			
 			if ($ret['num_rows'] == '1')
 			{
-				//print_r ($ret['rows']);
+				
 				foreach ($ret['rows'] as $row) {
 					$session['name'] = $row->name;
 					$session['username'] = $row->username;
@@ -41,6 +41,7 @@ public function user_auth($data){
 				
 				$this->session->set_userdata('login', $session);
 				
+				$result['username'] = $row->username;
 				$result['check'] = true;
 				return $result;				
 			}

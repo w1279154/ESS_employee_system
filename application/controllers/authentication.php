@@ -182,4 +182,25 @@ class Authentication extends CI_Controller {
 		}
 
 	} //END AUTH
+
+	public function auth_change_company_salary()
+	{
+		$data['username'] = $this->input->post('username');
+		$data['password'] = $this->input->post('password');
+		$percent = $this->input->post('percentage');
+
+		$this->session->set_flashdata('percentage', $percent);
+
+		$result = $this->user_model->user_auth($data);	
+
+		if ($result['check'] == true && $result['username'] == "hr_manager")
+		{
+			redirect("http://{$_SERVER['HTTP_HOST']}/w1279154/index.php/hr_manager/change_company_salary_complete");
+		} //END IF
+		else if($result['check'] == false) {
+			$this->load->view('auth_failed');
+			$this->user_model->delete_session();		
+		}
+		
+	} //END AUTH 
 } //END CLASS

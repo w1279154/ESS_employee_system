@@ -25,7 +25,10 @@
 			</td></tr>
 			<tr><td>
 						<a href="<?= base_url()."index.php/hr/remove_employee_search"?>">Remove Employee</a>
-			</td></tr>	
+			</td></tr>
+			<tr><td>
+						<a href="<?= base_url()."index.php/hr_manager/change_company_salary_menu"?>">Change Company Salary (HR Manager Only)</a>
+			</td></tr>		
 		</table>
 
 </body>

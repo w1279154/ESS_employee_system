@@ -49,7 +49,7 @@
 	<tr>
 		<td>Salary(£):</td>
 		<td>
-			<input type="text" style="width: 100%;" placeholder="12345" name="salary" required/>
+			<input type="text" style="width: 100%;" placeholder="12345" name="salary" onkeyup="this.value=this.value.replace(/[^\d]/,'')" onchange="this.value=this.value.replace(/[^\d]/,'')"  required/>
 		</td>
 	</tr>
 	<tr>
