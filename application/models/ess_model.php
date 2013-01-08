@@ -6,6 +6,10 @@ class Ess_model extends CI_Model {
        parent::__construct();
        $this->load->database();
     }//end 
+
+    /**************************************************************************************************************************************
+	*	SEARCH MODEL
+	***************************************************************************************************************************************/
     
 	public function search($limit, $offset, $sort_by, $sort_order, $data_search){
 		
@@ -15,13 +19,6 @@ class Ess_model extends CI_Model {
 		$last_name = $data_search['last_name'];
 		$title = $data_search['title'];
 		$department = $data_search['department'];
-		
-		//$sort_order = ($sort_order == 'desc') ? 'desc' : 'asc';
-		//$sort_columns = array('e.emp_no', 'e.birth_date', 'e.first_name', 'e.last_name', 'e.gender', 'e.hire_date', 's.salary', 't.title');
-		//$sort_by = (in_array($sort_by, $sort_columns)) ? $sort_by : 'e.emp_no';
-		
-		//results query
-		// $q = $this->db->select("SQL_CALC_FOUND_ROWS e.emp_no, e.birth_date, e.first_name, e.last_name, e.gender, e.hire_date, t.title, s.salary, d.dept_name", FALSE)
 		
 	
 	   $q = $this->db->select("e.emp_no, e.first_name, e.last_name, t.title, d.dept_name")
@@ -66,6 +63,10 @@ class Ess_model extends CI_Model {
 		
 		
 		} //end search
+
+	/**************************************************************************************************************************************
+	*	COUNT RESULTS
+	***************************************************************************************************************************************/
 		  
 	public function count_results($data_search){
 		
@@ -94,9 +95,9 @@ class Ess_model extends CI_Model {
 		}//end count
 		  
 		
-	
-	
-	
+	/**************************************************************************************************************************************
+	*	RETURNS DEPT NAME OPTIONS
+	***************************************************************************************************************************************/
 	
 	public function dept_name_options()
 	{
@@ -113,9 +114,9 @@ class Ess_model extends CI_Model {
 		
 	}//end dept_name_options
 	
-	
-	
-	
+	/**************************************************************************************************************************************
+	*	RETURNS TITLE OPTIONS
+	***************************************************************************************************************************************/
 	
 	public function title_options()
 	{
@@ -132,16 +133,9 @@ class Ess_model extends CI_Model {
 		
 	}//end title_options
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/**************************************************************************************************************************************
+	*	SEARCH BY ALL
+	***************************************************************************************************************************************/	
 		public function search__all($limit, $offset, $sort_by, $sort_order) {
         
 		$sort_order = ($sort_order == 'desc') ? 'desc' : 'asc';

@@ -41,10 +41,7 @@ class Hr_manager_model extends CI_Model {
 		$q = $q->get()->result();
 		$num_rows = count($q);
 
-		echo ($num_rows);
-		echo ('  ');
-		echo ($new_cent);
-		//print_r ($q);
+		
 
 		foreach ($q as $e)
 		{
@@ -91,33 +88,11 @@ class Hr_manager_model extends CI_Model {
 
 		$this->db->insert('salaries', $data_salaries);
 
-			}
-			
-/*
-			$this->db->flush_cache();
-		 	$this->db->where('emp_no', $e->emp_no);
-			$this->db->where('to_date', '9999-01-01');
-			$this->db->update('salaries', array('salary' => $new_salary));
-			$this->db->flush_cache();
-*/
+			}//end if
+
 		} //end foreach
 
-			/*
-		$this->db->flush_cache();
-		 	$this->db->where('emp_no', $emp_no);
-			$this->db->where('to_date', '9999-01-01');
-			$this->db->update('salaries', array('to_date' => $now));
-		$this->db->flush_cache();
-
-		$data_salaries = array(
-						   'emp_no' => $emp_no ,
-						   'salary' => $new_salary,
-						   'from_date' => $now,
-						   'to_date' => '9999-01-01'
-					);
-
-		$this->db->insert('salaries', $data_salaries);
-		*/
+	
 			$this->record_to_logs("change_company_salary");
 	} //END CHANGE SALARY SEARCH
 
